@@ -58,3 +58,7 @@ library('dplyr')
 tidy_data_set <- df_mean_std %>%
       group_by(activityID, subjectID) %>%
       summarise_each(funs = mean)
+
+# output to file "tidy_data_set.txt"
+write.table(tidy_data_set, "tidy_data_set.txt", row.names = FALSE, 
+            quote = FALSE)
